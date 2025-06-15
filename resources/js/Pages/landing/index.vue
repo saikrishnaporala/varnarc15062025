@@ -344,56 +344,151 @@ const resolveIcon = (path: string) => {
                                 </div>
                             </div>
                             <div v-if="selectedPlan" class="detail-box fade-in">
-                                <b-card v-if="selectedPlan.id=='seo'" class="text-bg-light">
+                                <b-card v-if="selectedPlan.id=='seo'" class="text-bg-light right-content-section">
                                     <h4 class="mb-3">{{ selectedPlan.title }}</h4>
                                     <BRow class="justify-content-center">
                                         <BCol lg="12">
                                             <BRow class="g-2">
                                                 <BCol>
-                                                <div class="position-relative">
-                                                    <input
-                                                    type="text"
-                                                    class="form-control form-control-lg bg-light border-light"
-                                                    placeholder="yourdomain.com"
-                                                    name="domainname"
-                                                    id="domainname"
-                                                    v-model="domainName"
-                                                    />
-                                                </div>
+                                                    <div class="position-relative">
+                                                        <input
+                                                        type="text"
+                                                        class="form-control form-control-lg bg-light border-light"
+                                                        placeholder="yourdomain.com"
+                                                        name="domainname"
+                                                        id="domainname"
+                                                        v-model="domainName"
+                                                        />
+                                                    </div>
                                                 </BCol>
                                                 <div class="col-auto">
-                                                <BButton
-                                                    type="submit"
-                                                    variant="primary"
-                                                    size="lg"
-                                                    @click="onGenerate"
-                                                >
-                                                    <i class="mdi mdi-magnify me-1"></i> Generate
-                                                </BButton>
+                                                    <BButton type="submit" variant="primary" size="lg" @click="onGenerate">
+                                                        <i class="mdi mdi-magnify me-1"></i> Generate
+                                                    </BButton>
                                                 </div>
                                             </BRow>
                                         </BCol>
                                     </BRow>
                                     <div class="service-item">
-                                        <h2>Web Development & SEO Audit</h2>
-                                        <ul>
-                                            <li><strong>Custom Website Development:</strong> Fast, responsive, and scalable websites tailored to your business.</li>
-                                            <li><strong>E-commerce Solutions:</strong> Build secure, user-friendly online stores with full shopping features.</li>
-                                            <li><strong>Landing Pages & UI/UX Design:</strong> Conversion-focused pages that reflect your brand identity.</li>
-                                            <li><strong>Technical SEO Audit:</strong> Identify and fix issues affecting performance, indexing, and speed.</li>
-                                            <li><strong>On-Page SEO:</strong> Optimize meta tags, headings, content, and internal links for better visibility.</li>
-                                            <li><strong>Off-Page SEO:</strong> Analyze backlinks and boost domain authority with ethical link-building.</li>
-                                            <li><strong>Performance & Core Web Vitals:</strong> Improve page load time, interactivity, and user experience.</li>
-                                        </ul>
+                                        <BListGroup tag="ul" class="mb-1">
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-danger-subtle text-danger rounded">
+                                                                    <i class="ri-netflix-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">Custom Website Development</h6>
+                                                                <small class="text-muted">Fast, responsive, and scalable websites tailored to your business.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-danger-subtle text-danger rounded">
+                                                                    <i class="ri-netflix-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">E-commerce Solutions</h6>
+                                                                <small class="text-muted">Build secure, user-friendly online stores with full shopping features.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-danger-subtle text-danger rounded">
+                                                                    <i class="ri-netflix-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">Landing Pages & UI/UX Design</h6>
+                                                                <small class="text-muted">Conversion-focused pages that reflect your brand identity.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div class="avatar-title bg-success-subtle text-success rounded">
+                                                                    <i class="ri-spotify-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">Technical SEO Audit</h6>
+                                                                <small class="text-muted">Identify and fix issues affecting performance, indexing, and speed.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0">
+                                                                <img src="@assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded">
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">On-Page SEO</h6>
+                                                                <small class="text-muted">Optimize meta tags, headings, content, and internal links for better visibility.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0 avatar-xs">
+                                                                <div
+                                                                    class="avatar-title bg-secondary-subtle text-secondary rounded">
+                                                                    <i class="ri-paypal-fill"></i>
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">Off-Page SEO</h6>
+                                                                <small class="text-muted">Analyze backlinks and boost domain authority with ethical link-building.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                            <BListGroupItem tag="li">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="flex-grow-1">
+                                                        <div class="d-flex">
+                                                            <div class="flex-shrink-0">
+                                                                <img src="@assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded">
+                                                            </div>
+                                                            <div class="flex-shrink-0 ms-2">
+                                                                <h6 class="fs-md mb-0">Performance & Core Web Vitals</h6>
+                                                                <small class="text-muted">Improve page load time, interactivity, and user experience.</small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </BListGroupItem>
+                                        </BListGroup>
                                     </div>
-                                    <p>
-                                    This is more information about the
-                                    {{ selectedPlan.title }}. Unlock your brand’s full
-                                    potential with our cutting-edge digital solutions. Whether
-                                    you need a stunning website, a powerful marketing
-                                    strategy, or seamless user experiences, we help you stand
-                                    out in a competitive digital world.
-                                    </p>
                                     <b-button variant="secondary" @click="resetSelection">Back</b-button>
                                 </b-card>
                                 <b-card v-if="selectedPlan.id=='digital'" class="text-bg-light">
@@ -2759,4 +2854,10 @@ const resolveIcon = (path: string) => {
     /* Cards */
     .plan-card { cursor: pointer; max-width: 100%; min-height: 350px;}
     .selected { z-index: 2; }
+
+    .right-content-section {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
 </style>
