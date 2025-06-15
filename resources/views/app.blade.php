@@ -4,23 +4,31 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title inertia>Velzon - Inertia + Vue & Laravel Admin & Dashboard Template</title>
+    <title inertia>Varnarc – Digital Growth, SEO Audits & Financial Clarity for Businesses</title>
     <meta name="description"
-        content="Velzon is a feature-rich admin and dashboard template built with Inertia.js, Vue.js, and Laravel, designed to simplify web application development.">
+        content="Discover Varnarc – your partner for high-performance web development, in-depth SEO audits, result-driven digital marketing, and expert financial & taxation services. Empower your brand with digital precision and financial clarity.">
     <meta name="keywords"
         content="Velzon, Inertia.js, Vue.js, Laravel, admin template, dashboard template, web application">
     <meta name="author" content="Themesbrand">
 
     <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Velzon - Inertia + Vue & Laravel Admin & Dashboard Template">
-    <meta property="og:description"
-        content="Simplify web application development with Velzon, a feature-rich admin and dashboard template built with Inertia.js, Vue.js, and Laravel.">
-    <meta property="og:image" content="URL to the template's logo or featured image">
-    <meta property="og:url" content="URL to the template's webpage">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://varnarc.com">
+    <meta property="og:title" content="Varnarc – Digital Growth, SEO Audits & Financial Clarity for Businesses">
+    <meta property="og:description" content="High-performance web development, powerful SEO audits, result-driven marketing, and expert financial services – all under one roof.">
+    <meta property="og:image" content="https://www.varnarc.com/assets/og-image.jpg"> <!-- Replace with actual image URL -->
+
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.varnarc.com">
+    <meta name="twitter:title" content="Varnarc – Digital Growth, SEO Audits & Financial Clarity for Businesses">
+    <meta name="twitter:description" content="Discover Varnarc – your partner for high-performance web development, in-depth SEO audits, result-driven digital marketing, and expert financial & taxation services. Empower your brand with digital precision and financial clarity.">
+    <meta name="twitter:image" content="https://www.varnarc.com/assets/og-image.jpg"> <!-- Replace with actual image URL -->
+
 
     <!-- App favicon -->
-    <link rel="shortcut icon" href="{{ URL::asset('image/favicon.ico') }}">
+    <link rel="shortcut icon" href="{{ URL::asset('image/icon_n.png') }}">
 
     <!-- Scripts -->
     @routes
