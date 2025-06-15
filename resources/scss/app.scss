@@ -204,8 +204,9 @@
     --vz-gray-700: #495057;
     --vz-gray-800: #363d48;
     --vz-gray-900: #212529;
-    --vz-primary: #6691e7;
-    --vz-secondary: #865ce2;
+    --vz-primary: #0b4862;
+    --vz-secondary: #04649c;
+    --vz-tertiary: #f68c28;
     --vz-success: #13c56b;
     --vz-info: #50c3e6;
     --vz-warning: #e8bc52;
@@ -213,14 +214,15 @@
     --vz-light: #f3f6f9;
     --vz-dark: #363d48;
     --vz-primary-rgb: 102,145,231;
-    --vz-secondary-rgb: 134,92,226;
+    --vz-secondary-rgb: 4,100,156;
+    --vz-tertiary-rgb: 246,140,40;
     --vz-success-rgb: 19,197,107;
     --vz-info-rgb: 80,195,230;
     --vz-warning-rgb: 232,188,82;
     --vz-danger-rgb: 237,94,94;
     --vz-light-rgb: 243,246,249;
     --vz-dark-rgb: 54,61,72;
-    --vz-primary-text-emphasis: #577bc4;
+    --vz-primary-text-emphasis: #04649c;
     --vz-secondary-text-emphasis: #724ec0;
     --vz-success-text-emphasis: #10a75b;
     --vz-info-text-emphasis: #44a6c4;
@@ -229,7 +231,7 @@
     --vz-light-text-emphasis: #ced4da;
     --vz-dark-text-emphasis: #363d48;
     --vz-primary-bg-subtle: #e8effb;
-    --vz-secondary-bg-subtle: #ede7fb;
+    --vz-secondary-bg-subtle: #e5eff5;
     --vz-success-bg-subtle: #dcf6e9;
     --vz-info-bg-subtle: #e5f6fb;
     --vz-warning-bg-subtle: #fcf5e5;
@@ -265,8 +267,8 @@
     --vz-secondary-bg-rgb: 255,255,255;
     --vz-tertiary-color: rgba(33,37,41,.5);
     --vz-tertiary-color-rgb: 33,37,41;
-    --vz-tertiary-bg: #eff2f7;
-    --vz-tertiary-bg-rgb: 239,242,247;
+    --vz-tertiary-bg: #fac593;
+    --vz-tertiary-bg-rgb: 250,197,147;
     --vz-heading-color: #495057;
     --vz-link-color: #6691e7;
     --vz-link-color-rgb: 102,145,231;
@@ -894,7 +896,10 @@ progress {
 
 @media(min-width: 1200px) {
     .container,.container-lg,.container-md,.container-sm,.container-xl {
-        max-width:1140px
+        max-width:75%
+    }
+    .navbar.container {
+        max-width: 90%;
     }
 }
 
@@ -3362,7 +3367,7 @@ textarea.form-control-lg {
     --vz-btn-bg: #6691e7;
     --vz-btn-border-color: #6691e7;
     --vz-btn-hover-color: #fff;
-    --vz-btn-hover-bg: #577bc4;
+    --vz-btn-hover-bg: #f48c2d;
     --vz-btn-hover-border-color: #5274b9;
     --vz-btn-focus-shadow-rgb: 125,162,235;
     --vz-btn-active-color: #fff;
@@ -4129,7 +4134,7 @@ textarea.form-control-lg {
     --vz-nav-tabs-border-radius: var(--vz-border-radius);
     --vz-nav-tabs-link-hover-border-color: var(--vz-secondary-bg) var(--vz-secondary-bg) var(--vz-border-color);
     --vz-nav-tabs-link-active-color: var(--vz-emphasis-color);
-    --vz-nav-tabs-link-active-bg: var(--vz-tertiary-bg);
+    --vz-nav-tabs-link-active-bg: var(--vz-secondary-bg);
     --vz-nav-tabs-link-active-border-color: var(--vz-border-color) var(--vz-border-color) var(--vz-tertiary-bg);
     border-bottom: var(--vz-nav-tabs-border-width) solid var(--vz-nav-tabs-border-color)
 }
@@ -4209,6 +4214,10 @@ textarea.form-control-lg {
 
 .nav-fill .nav-item .nav-link,.nav-justified .nav-item .nav-link {
     width: 100%
+}
+
+.tab-content {
+    margin-top: 50px;
 }
 
 .tab-content>.tab-pane {
@@ -9150,6 +9159,11 @@ textarea.form-control-lg {
 .text-secondary {
     --vz-text-opacity: 1;
     color: rgba(var(--vz-secondary-rgb),var(--vz-text-opacity))!important
+}
+
+.text-tertiary {
+    --vz-text-opacity: 1;
+    color: rgba(var(--vz-tertiary-rgb),var(--vz-text-opacity))!important
 }
 
 .text-success {
@@ -17343,11 +17357,13 @@ code {
 }
 
 .card-logo-light {
-    display: var(--vz-card-logo-light)
+    display: var(--vz-card-logo-light);
+    height: 50px;
 }
 
 .card-logo-dark {
-    display: var(--vz-card-logo-dark)
+    display: var(--vz-card-logo-dark);
+    height: 50px;
 }
 
 .border-white {
@@ -18743,7 +18759,10 @@ b,strong {
 
 @media(min-width: 1200px) {
     :is(.container,.container-lg,.container-md,.container-sm,.container-xl,.container-xxl) {
-        max-width:1140px
+        max-width:75%
+    }
+    :is(.navbar.container) {
+        max-width: 90%;
     }
 }
 
@@ -28818,7 +28837,7 @@ span.flatpickr-weekday {
     font-weight: 500;
     text-transform: uppercase;
     color: #fff;
-    text-shadow: 3px 4px #13c56b
+    text-shadow: 3px 4px var(--vz-secondary)
 }
 
 .countdown-input-group {
@@ -30188,7 +30207,7 @@ span.flatpickr-weekday {
 }
 
 .bg-overlay-pattern {
-    background-image: url(/velzon/vue/saas/img/bg-pattern.3a42b704.png);
+    background-image: url("@assets/images/landing/bg-pattern.png");
     background-color: transparent;
     background-position: 50%;
     background-size: cover;
@@ -30831,12 +30850,16 @@ span.flatpickr-weekday {
 }
 
 @font-face {
-    font-family: Material Design Icons;
-    src: url(/velzon/vue/saas/fonts/materialdesignicons-webfont.aed016a6.eot);
-    src: url(/velzon/vue/saas/fonts/materialdesignicons-webfont.aed016a6.eot?#iefix&v=7.2.96) format("embedded-opentype"),url(/velzon/vue/saas/fonts/materialdesignicons-webfont.68358e87.woff2) format("woff2"),url(/velzon/vue/saas/fonts/materialdesignicons-webfont.fc79b61d.woff) format("woff"),url(/velzon/vue/saas/fonts/materialdesignicons-webfont.3b00206b.ttf) format("truetype");
+    font-family: 'Material Design Icons';
+    src: url('@assets/fonts/materialdesignicons-webfont.eot');
+    src: url('@assets/fonts/materialdesignicons-webfont.eot?#iefix&v=7.2.96') format('embedded-opentype'),
+         url('@assets/fonts/materialdesignicons-webfont.woff2') format('woff2'),
+         url('@assets/fonts/materialdesignicons-webfont.woff') format('woff'),
+         url('@assets/fonts/materialdesignicons-webfont.ttf') format('truetype');
     font-weight: 400;
-    font-style: normal
-}
+    font-style: normal;
+    font-display: swap;
+  }
 
 .mdi-set,.mdi:before {
     display: inline-block;
@@ -74712,11 +74735,15 @@ span.flatpickr-weekday {
 }
 
 @font-face {
-    font-family: remixicon;
-    src: url(/velzon/vue/saas/fonts/remixicon.227bf528.eot);
-    src: url(/velzon/vue/saas/fonts/remixicon.227bf528.eot#iefix) format("embedded-opentype"),url(/velzon/vue/saas/fonts/remixicon.5d6b0a13.woff2) format("woff2"),url(/velzon/vue/saas/fonts/remixicon.26f18b51.woff) format("woff"),url(/velzon/vue/saas/fonts/remixicon.7cc5770e.ttf) format("truetype"),url(/velzon/vue/saas/img/remixicon.598851e6.svg#remixicon) format("svg");
-    font-display: swap
-}
+    font-family: 'remixicon';
+    src: url('@assets/fonts/remixicon.eot');
+    src: url('@assets/fonts/remixicon.eot?#iefix') format('embedded-opentype'),
+         url('@assets/fonts/remixicon.woff2') format('woff2'),
+         url('@assets/fonts/remixicon.woff') format('woff'),
+         url('@assets/fonts/remixicon.ttf') format('truetype'),
+         url('@assets/fonts/remixicon.svg#remixicon') format('svg');
+    font-display: swap;
+  }
 
 [class*=" ri-"],[class^=ri-] {
     font-family: remixicon!important;
@@ -85736,3 +85763,63 @@ th.gridjs-th:last-child {
     background-color: #9bc2f7;
     cursor: ew-resize
 }
+
+.plan-card {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 340px;
+    min-height: 500px; /* force equal height */
+    display: flex;
+    flex-direction: column;
+}
+
+.plan-card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.plan-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem; /* Bootstrap mb-3 = 1rem */
+}
+
+.plan-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.plan-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem; /* space between icon and text */
+    margin-bottom: 0.75rem; /* space between list items */
+    color: #6c757d; /* like Bootstrap text-muted */
+    font-family: var(--your-secondary-font, sans-serif); /* optional */
+}
+
+.plan-feature-list .icon {
+    flex-shrink: 0;
+    width: 1rem;
+    height: 1rem;
+    background: url('your-tick-icon.svg') no-repeat center center / contain;
+}
+
+// .plan-feature-list {
+//     list-style: none;
+//     color: #878a99; /* matches Bootstrap text-muted */
+//     display: flex;
+//     flex-direction: column;
+//     gap: 0.5rem; /* Bootstrap gap-2 is 0.5rem */
+//     font-family: var(--bs-font-sans-serif-secondary, "Helvetica Neue", sans-serif); /* fallback for ff-secondary */
+//     flex-grow: 1;
+//     padding-left: 0; /* remove ul default padding */
+//     margin-bottom: 0; /* optional, to clean layout */
+//     align-items: flex-start;
+// }
