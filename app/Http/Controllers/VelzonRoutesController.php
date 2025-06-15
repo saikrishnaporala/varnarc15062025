@@ -7,7 +7,16 @@ use Inertia\Inertia;
 
 class VelzonRoutesController extends Controller
 {
-    //
+    public function landing() {
+        return Inertia::render('landing/index');
+    }
+
+    public function seo_report($domain) {
+        return Inertia::render('seo-report/index', [
+            'domain' => $domain,
+            // add more props here as needed
+        ]);
+    }
 
     public function dashboard()
     {
@@ -456,10 +465,6 @@ class VelzonRoutesController extends Controller
 
     public function form_checkboxs_radios() {
         return Inertia::render('forms/checkboxs-radios');
-    }
-
-    public function landing() {
-        return Inertia::render('landing/index');
     }
 
     public function nft_landing() {
