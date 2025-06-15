@@ -55,7 +55,7 @@ export default {
 
         <BRow class="justify-content-center">
           <BCol md="8" lg="6" xl="5">
-            <BCard no-body class="mt-4">
+            <BCard no-body class="mt-4 card-bg-fill">
 
               <BCardBody class="p-4">
                 <div class="mb-4">

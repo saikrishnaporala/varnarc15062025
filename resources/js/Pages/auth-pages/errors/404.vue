@@ -24,10 +24,10 @@ export default {
             <BContainer>
                 <BRow class="justify-content-center">
                     <BCol xl="5">
-                        <BCard no-body class="overflow-hidden">
+                        <BCard no-body class="overflow-hidden card-bg-fill galaxy-border-none">
                             <BCardBody class="p-4">
                                 <div class="text-center">
-                                    <lottie colors="primary:#00bd9d,secondary:#25a0e2" :options="defaultOptions"
+                                    <lottie colors="primary:#405189,secondary:#0ab39c" :options="defaultOptions"
                                         style="height:7.5rem;width:7.5rem;" />
                                     <h1 class="text-primary mb-4">Oops !</h1>
                                     <h4 class="text-uppercase">Sorry, Page not Found 😭</h4>

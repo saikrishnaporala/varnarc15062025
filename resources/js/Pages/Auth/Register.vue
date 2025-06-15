@@ -104,7 +104,7 @@ export default {
                                         <div v-if="$page.props.jetstream.hasTermsAndPrivacyPolicyFeature" class="mb-3 form-check">
                                             <Checkbox id="terms" v-model:checked="form.terms" name="terms" required class="form-check-input me-1" :class="{ 'is-invalid': form.errors.terms }" />
                                             <label class="form-check-label mb-0 fs-12 text-muted fst-italic" for="auth-remember-check">
-                                                I agree to the <BLink target="_blank" :href="route('terms.show')" class="">Terms of Service</BLink> and <BLink target="_blank" :href="route('policy.show')" class="">Privacy Policy</BLink>
+                                                I agree to the <a target="_blank" :href="route('terms.show')" class="">Terms of Service</a> and <a target="_blank" :href="route('policy.show')" class="">Privacy Policy</a>
                                             </label>
                                             <InputError :message="form.errors.terms" />
                                         </div>

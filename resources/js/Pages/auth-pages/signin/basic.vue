@@ -42,7 +42,7 @@ export default {
 
         <BRow class="justify-content-center">
           <BCol md="8" lg="6" xl="5">
-            <BCard no-body class="mt-4">
+            <BCard no-body class="mt-4 card-bg-fill">
 
               <BCardBody class="p-4">
                 <div class="text-center mt-2">
@@ -65,7 +65,7 @@ export default {
                       <label class="form-label" for="password-input">Password</label>
                       <div class="position-relative auth-pass-inputgroup mb-3">
                         <input :type="togglePassword ? 'text' : 'password'" class="form-control pe-5" placeholder="Enter password" id="password-input">
-                        <BButton variant="link" class="position-absolute end-0 top-0 text-decoration-none text-muted" type="button" id="password-addon" @click="togglePassword = !togglePassword">
+                        <BButton variant="link" class="position-absolute end-0 top-0 text-decoration-none text-muted material-shadow-none" type="button" id="password-addon" @click="togglePassword = !togglePassword">
                           <i class="ri-eye-fill align-middle"></i>
                         </BButton>
                       </div>
@@ -83,7 +83,7 @@ export default {
 
                     <div class="mt-4 text-center">
                       <div class="signin-other-title">
-                        <h5 class="fs-13 fw-semibold mb-4 title">Sign In with</h5>
+                        <h5 class="fs-13 mb-4 title">Sign In with</h5>
                       </div>
                       <div>
                         <BButton type="button" variant="primary" class="btn-icon"><i class="ri-facebook-fill fs-16"></i></BButton>

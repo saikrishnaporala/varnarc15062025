@@ -113,7 +113,8 @@ export default {
 
                         <div class="mt-4 text-center">
                             <p class="mb-0">Wait, I remember my password...
-                                <Link :href="route('login')" class="fw-semibold text-primary text-decoration-underline"> Click Here </Link>
+                                <Link :href="route('login')" class="fw-semibold text-primary text-decoration-underline"> Click
+                                here </Link>
                             </p>
                         </div>
                     </BCol>

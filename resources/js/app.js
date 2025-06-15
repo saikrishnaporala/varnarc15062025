@@ -1,7 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue-next/dist/bootstrap-vue-next.css'
+import '../scss/app.scss';
+import 'bootstrap/dist/js/bootstrap.bundle'
 import './bootstrap';
-import '../scss/config/minimal/app.scss';
 import '@vueform/slider/themes/default.css';
-import '../scss/mermaid.min.css';
+import "leaflet/dist/leaflet.css";
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
@@ -29,8 +32,8 @@ createInertiaApp({
     resolve: (name) => resolvePageComponent(`./Pages/${name}.vue`, import.meta.glob('./Pages/**/*.vue')),
     setup({ el, App, props, plugin }) {
         return createApp({ render: () => h(App, props) })
-        .use(store)
             .use(plugin)
+            .use(store)
             .use(i18n)
             .use(ZiggyVue)
             .use(BootstrapVueNext)

@@ -92,7 +92,7 @@ const closeModal = () => {
 
             <div class="text-end">
                 <BButton variant="danger" @click="closeModal">Cancel</BButton>
-                <BButton variant="primary" class="ms-1" :class="{ 'opacity-25': form.processing }"
+                <BButton variant="success" class="ms-1" :class="{ 'opacity-25': form.processing }"
                 :disabled="form.processing"
                 @click="confirmPassword">{{ button }}</BButton>
             </div>

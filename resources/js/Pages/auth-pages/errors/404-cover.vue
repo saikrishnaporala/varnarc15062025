@@ -20,7 +20,7 @@ export default {
                             <div class="mt-3">
                                 <h3 class="text-uppercase">Sorry, Page not Found 😭</h3>
                                 <p class="text-muted mb-4">The page you are looking for not available!</p>
-                                <Link href="/" class="btn btn-primary"><i class="mdi mdi-home me-1"></i>Back to
+                                <Link href="/" class="btn btn-success"><i class="mdi mdi-home me-1"></i>Back to
                                     home</Link>
                             </div>
                         </div>

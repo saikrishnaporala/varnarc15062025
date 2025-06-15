@@ -42,7 +42,7 @@ export default {
             <BContainer>
                 <BRow>
                     <BCol lg="12">
-                        <BCard no-body class="overflow-hidden border-0" >
+                        <BCard no-body class="overflow-hidden galaxy-border-none card-bg-fill">
                             <BRow class="justify-content-center g-0">
                                 <BCol lg="6">
                                     <div class="p-lg-5 p-4 auth-one-bg h-100">
@@ -60,7 +60,7 @@ export default {
 
                                                 <div id="qoutescarouselIndicators" class="carousel slide"
                                                     data-bs-ride="carousel">
-                                                    <Swiper class=" text-center text-white pb-5"
+                                                    <Swiper class=" text-center text-white-50 pb-5"
                                                         :autoplay="{ delay: 3000, disableOnInteraction: false }"
                                                         :loop="true" :modules="[Autoplay, Navigation, Pagination]"
                                                         :pagination="{ clickable: true, el: '.swiper-pagination' }">
@@ -92,7 +92,7 @@ export default {
 
                                 <BCol lg="6">
                                     <div class="p-lg-5 p-4 text-center">
-                                        <lottie colors="primary:#25a0e2,secondary:#00bd9d" :options="defaultOptions"
+                                        <lottie colors="primary:#405189,secondary:#08a88a" :options="defaultOptions"
                                             :height="180" :width="180" />
 
                                         <div class="mt-4 pt-2">
@@ -114,7 +114,7 @@ export default {
             </BContainer>
         </div>
 
-        <footer class="footer">
+        <footer class="footer galaxy-border-none">
             <BContainer>
                 <BRow>
                     <BCol lg="12">
