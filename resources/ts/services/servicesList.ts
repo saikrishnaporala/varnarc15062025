@@ -1,7 +1,7 @@
 // services-data/servicesList.ts
-import seoIcon from "@/assets/icons/seoIcon.svg";
-import webIcon from "@/assets/icons/webIcon.svg";
-import auditIcon from "@/assets/icons/auditIcon.svg";
+import seoIcon from '@assets/images/seo.png'
+import webIcon from '@assets/images/webdesign1.png'
+import auditIcon from '@assets/images/audit.png'
 
 export const servicesList = [
   {

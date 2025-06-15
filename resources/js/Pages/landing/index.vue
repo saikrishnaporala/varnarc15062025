@@ -3,9 +3,6 @@ import { computed, onMounted, onUnmounted, ref } from "vue";
 import { Link, Head } from "@inertiajs/vue3";
 import { CountTo } from "vue3-count-to";
 import LandingNavbar from "./LandingNavbar.vue";
-import seoIcon from '@assets/images/seo.png'
-import webIcon from '@assets/images/webdesign1.png'
-import auditIcon from '@assets/images/audit.png'
 import {
   Autoplay,
   Thumbs,
