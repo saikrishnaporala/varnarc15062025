@@ -346,6 +346,34 @@ const resolveIcon = (path: string) => {
                             <div v-if="selectedPlan" class="detail-box fade-in">
                                 <b-card v-if="selectedPlan.id=='seo'" class="text-bg-light">
                                     <h4 class="mb-3">{{ selectedPlan.title }}</h4>
+                                    <BRow class="justify-content-center">
+                                        <BCol lg="12">
+                                            <BRow class="g-2">
+                                                <BCol>
+                                                <div class="position-relative">
+                                                    <input
+                                                    type="text"
+                                                    class="form-control form-control-lg bg-light border-light"
+                                                    placeholder="yourdomain.com"
+                                                    name="domainname"
+                                                    id="domainname"
+                                                    v-model="domainName"
+                                                    />
+                                                </div>
+                                                </BCol>
+                                                <div class="col-auto">
+                                                <BButton
+                                                    type="submit"
+                                                    variant="primary"
+                                                    size="lg"
+                                                    @click="onGenerate"
+                                                >
+                                                    <i class="mdi mdi-magnify me-1"></i> Generate
+                                                </BButton>
+                                                </div>
+                                            </BRow>
+                                        </BCol>
+                                    </BRow>
                                     <p>
                                     This is more information about the
                                     {{ selectedPlan.title }}. Unlock your brand’s full
@@ -391,66 +419,6 @@ const resolveIcon = (path: string) => {
       <BContainer>
         <BRow class="justify-content-center">
           <BCol lg="8" sm="10">
-            <div class="text-center mt-lg-5 pt-5">
-              <h1 class="display-6 fw-semibold mb-3 lh-base">
-                Amplify Your Digital Presence with
-                <span class="text-secondary">Varnarc </span>
-              </h1>
-              <p class="lead text-muted lh-base">
-                Unlock your brand’s full potential with our cutting-edge digital
-                solutions. Whether you need a stunning website, a powerful
-                marketing strategy, or seamless user experiences, we help you
-                stand out in a competitive digital world. Elevate your online
-                presence and drive meaningful engagement with strategies
-                designed for success.
-              </p>
-            </div>
-
-            <div class="text-center mt-lg-5 pt-5">
-              <h1 class="display-6 fw-semibold mb-3 lh-base">
-                SEO Audit by
-                <span class="text-secondary">Varnarc </span>
-              </h1>
-              <BCard no-body>
-                <BCardHeader class="border-0">
-                  <BRow class="justify-content-center">
-                    <BCol lg="12">
-                      <BRow class="g-2">
-                        <BCol>
-                          <div class="position-relative">
-                            <input
-                              type="text"
-                              class="form-control form-control-lg bg-light border-light"
-                              placeholder="yourdomain.com"
-                              name="domainname"
-                              id="domainname"
-                              v-model="domainName"
-                            />
-                          </div>
-                        </BCol>
-                        <div class="col-auto">
-                          <BButton
-                            type="submit"
-                            variant="primary"
-                            size="lg"
-                            @click="onGenerate"
-                          >
-                            <i class="mdi mdi-magnify me-1"></i> Generate
-                          </BButton>
-                        </div>
-                      </BRow>
-                    </BCol>
-                  </BRow>
-                </BCardHeader>
-              </BCard>
-              <!-- <div class="d-flex gap-2 justify-content-center mt-4">
-                                <Link href="/auth/signin-basic" class="btn btn-primary">Get Started <i
-                                        class="ri-arrow-right-line align-middle ms-1"></i></Link>
-                                <Link href="/pages/pricing" class="btn btn-danger">View Plans <i
-                                        class="ri-eye-line align-middle ms-1"></i></Link>
-                            </div> -->
-            </div>
-
             <div class="mt-4 mt-sm-5 pt-sm-5 mb-sm-n5 demo-carousel">
               <div class="demo-img-patten-top d-none d-sm-block">
                 <img
