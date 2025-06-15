@@ -30,6 +30,12 @@ import "swiper/css/effect-creative";
 import "swiper/css/effect-flip";
 import "swiper/css/effect-coverflow";
 
+// Web page Data
+import { servicesList } from "@assets/ts/services/servicesList";
+import { webSeoServices } from "@assets/ts/services/webSeoServices";
+import { digitalMarketingServices } from "@assets/ts/services/digitalMarketingServices";
+import { financeServices } from "@assets/ts/services/financeServices";
+
 // API
 import { fetchSeoAudit } from "@assets/ts/services/seo";
 
@@ -231,38 +237,6 @@ const slides = [
   },
 ];
 const selectedId = ref<string | null>(null);
-
-const servicesList = [
-  {
-    id: "seo",
-    title: "Web Development & SEO Audit",
-    description: "At Varnarc, we craft high-performance websites tailored to your brand and optimize them with in-depth SEO audits that uncover hidden issues, boost rankings, and drive measurable growth.",
-    price: "19",
-    icon: seoIcon,
-    features: [
-      "✔ Actionable SEO Roadmaps",
-      "✔ Instant Health Checks",
-      "✔ Data You Can Trust",
-      "✔ Built for Growth",
-    ]
-  },
-  {
-    id: "digital",
-    title: "Digital Marketing",
-    description: "Analyze and optimize your website for better search engine rankings",
-    price: "29",
-    icon: webIcon,
-    features: ["✔ Up to 10 Projects"],
-  },
-  {
-    id: "financial",
-    title: "Financial & Taxation",
-    description: "Analyze and optimize your website for better search engine rankings",
-    price: "49",
-    icon: auditIcon,
-    features: ["✔ Unlimited Projects"],
-  },
-];
 
 const selectedPlan = computed(
   () => servicesList.find((p) => p.id === selectedId.value) || null
@@ -493,29 +467,57 @@ const resolveIcon = (path: string) => {
                                         <b-button variant="secondary" @click="resetSelection">Back</b-button>
                                     </div>
                                 </b-card>
-                                <b-card v-if="selectedPlan.id=='digital'" class="text-bg-light">
-                                    <h4 class="mb-3">{{ selectedPlan.title }}</h4>
-                                    <p>
-                                    This is more information about the
-                                    {{ selectedPlan.title }}. Unlock your brand’s full
-                                    potential with our cutting-edge digital solutions. Whether
-                                    you need a stunning website, a powerful marketing
-                                    strategy, or seamless user experiences, we help you stand
-                                    out in a competitive digital world.
-                                    </p>
-                                    <b-button variant="secondary" @click="resetSelection">Back</b-button>
+                                <b-card v-if="selectedPlan.id=='digital'" class="text-bg-white">
+                                    <div class="right-content-section-column">
+                                        <h4 class="mb-3">{{ selectedPlan.title }}</h4>
+                                        <p>Analyze and optimize your website for better search engine rankings. We offer comprehensive digital marketing services to grow your brand online and drive targeted traffic.</p>
+                                        <div class="service-item">
+                                            <BListGroup tag="ul" class="mb-1">
+                                                <div v-for="(service, index) in digital_marketing_services" :key="index" class="border-b pb-2">
+                                                    <BListGroupItem tag="li">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex">
+                                                                    <i class="mdi mdi-check-bold align-middle lh-1 me-2"></i>
+                                                                    <div class="flex-shrink-0 ms-2">
+                                                                        <h6 class="fs-md mb-0">{{ service.title }}</h6>
+                                                                        <small class="text-muted">{{ service.description }}</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </BListGroupItem>
+                                                </div>
+                                            </BListGroup>
+                                        </div>
+                                        <b-button variant="secondary" @click="resetSelection">Back</b-button>
+                                    </div>
                                 </b-card>
                                 <b-card v-if="selectedPlan.id=='financial'" class="text-bg-light">
-                                    <h4 class="mb-3">{{ selectedPlan.title }}</h4>
-                                    <p>
-                                    This is more information about the
-                                    {{ selectedPlan.title }}. Unlock your brand’s full
-                                    potential with our cutting-edge digital solutions. Whether
-                                    you need a stunning website, a powerful marketing
-                                    strategy, or seamless user experiences, we help you stand
-                                    out in a competitive digital world.
-                                    </p>
-                                    <b-button variant="secondary" @click="resetSelection">Back</b-button>
+                                    <div class="right-content-section-column">
+                                        <h4 class="mb-3">{{ selectedPlan.title }}</h4>
+                                        <p>We provide end-to-end financial and taxation services designed to support individuals and businesses in maintaining compliance and simplifying financial operations.</p>
+                                        <div class="service-item">
+                                            <BListGroup tag="ul" class="mb-1">
+                                                <div v-for="(service, index) in finance_services" :key="index" class="border-b pb-2">
+                                                    <BListGroupItem tag="li">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex">
+                                                                    <i class="mdi mdi-check-bold align-middle lh-1 me-2"></i>
+                                                                    <div class="flex-shrink-0 ms-2">
+                                                                        <h6 class="fs-md mb-0">{{ service.title }}</h6>
+                                                                        <small class="text-muted">{{ service.description }}</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </BListGroupItem>
+                                                </div>
+                                            </BListGroup>
+                                        </div>
+                                        <b-button variant="secondary" @click="resetSelection">Back</b-button>
+                                    </div>
                                 </b-card>
                             </div>
                         </div>
