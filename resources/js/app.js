@@ -5,6 +5,7 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import './bootstrap';
 import '@vueform/slider/themes/default.css';
 import "leaflet/dist/leaflet.css";
+import '@fortawesome/fontawesome-free/css/all.min.css'
 
 import { createApp, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';

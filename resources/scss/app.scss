@@ -85811,15 +85811,17 @@ th.gridjs-th:last-child {
     background: url('your-tick-icon.svg') no-repeat center center / contain;
 }
 
-// .plan-feature-list {
-//     list-style: none;
-//     color: #878a99; /* matches Bootstrap text-muted */
-//     display: flex;
-//     flex-direction: column;
-//     gap: 0.5rem; /* Bootstrap gap-2 is 0.5rem */
-//     font-family: var(--bs-font-sans-serif-secondary, "Helvetica Neue", sans-serif); /* fallback for ff-secondary */
-//     flex-grow: 1;
-//     padding-left: 0; /* remove ul default padding */
-//     margin-bottom: 0; /* optional, to clean layout */
-//     align-items: flex-start;
-// }
+.listcard {
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+.listcard:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    background-color: #fde7d1 !important;
+}
+
+.services-section {
+    background-color: #ffffff;
+    color: #1f2937;
+    margin-top: 30px;
+  }

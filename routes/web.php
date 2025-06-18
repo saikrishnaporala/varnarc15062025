@@ -16,6 +16,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/home', [VelzonRoutesController::class, 'landing'])->name('home');
 
+Route::prefix('financial')->group(function () {
+    Route::get('/accounting-services', [VelzonRoutesController::class, 'accounting_services']);
+    Route::get('/company-incorporation', [VelzonRoutesController::class, 'company_incorporation']);
+    Route::get('/gst-registration', [VelzonRoutesController::class, 'gst_registration']);
+    Route::get('/msme-registration', [VelzonRoutesController::class, 'msme_registration']);
+    Route::get('/pan-application', [VelzonRoutesController::class, 'pan_application']);
+    Route::get('/payroll-services', [VelzonRoutesController::class, 'payroll_services']);
+    Route::get('/pf-withdrawal', [VelzonRoutesController::class, 'pf_withdrawal']);
+    Route::get('/secretarial-services', [VelzonRoutesController::class, 'secretarial_services']);
+    Route::get('/shop-establishment', [VelzonRoutesController::class, 'shop_establishment']);
+    Route::get('/tds-filing', [VelzonRoutesController::class, 'tds_filing']);
+});
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',])->group(function () {
     
     Route::controller(VelzonRoutesController::class)->group(function () {

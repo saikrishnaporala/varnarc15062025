@@ -7,9 +7,19 @@ use Inertia\Inertia;
 
 class VelzonRoutesController extends Controller
 {
-    public function landing() {
-        return Inertia::render('landing/index');
-    }
+    public function landing() { return Inertia::render('landing/index'); }
+
+    // Financial Links
+    public function accounting_services() { return Inertia::render('financial/accounting-services'); }
+    public function company_incorporation() { return Inertia::render('financial/company-incorporation'); }
+    public function gst_registration() { return Inertia::render('financial/gst-registration'); }
+    public function msme_registration() { return Inertia::render('financial/msme-registration'); }
+    public function pan_application() { return Inertia::render('financial/pan-application'); }
+    public function payroll_services() { return Inertia::render('financial/payroll-services'); }
+    public function pf_withdrawal() { return Inertia::render('financial/pf-withdrawal'); }
+    public function secretarial_services() { return Inertia::render('financial/secretarial-services'); }
+    public function shop_establishment() { return Inertia::render('financial/shop-establishment'); }
+    public function tds_filing() { return Inertia::render('financial/tds-filing'); }
 
     public function seo_report($domain) {
         return Inertia::render('seo-report/index', [

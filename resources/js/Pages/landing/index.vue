@@ -2,7 +2,8 @@
 import { computed, onMounted, onUnmounted, ref } from "vue";
 import { Link, Head } from "@inertiajs/vue3";
 import { CountTo } from "vue3-count-to";
-import LandingNavbar from "./LandingNavbar.vue";
+import LandingNavbar from "../../Components/LandingNavbar.vue";
+import LandingFooter from "../../Components/LandingFooter.vue";
 import {
   Autoplay,
   Thumbs,
@@ -64,11 +65,6 @@ defineExpose({
   Link,
   Head,
 });
-
-const topFunction = () => {
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-};
 
 const monthly = () => {
   document.querySelectorAll(".month").forEach((el) => {
@@ -343,134 +339,7 @@ const resolveIcon = (path: string) => {
                                         </BRow>
                                         <div class="service-item">
                                             <BListGroup tag="ul" class="mb-1">
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0 avatar-xs">
-                                                                    <div class="avatar-title bg-danger-subtle text-danger rounded">
-                                                                        <i class="ri-netflix-fill"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">Custom Website Development</h6>
-                                                                    <small class="text-muted">Fast, responsive, and scalable websites tailored to your business.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0 avatar-xs">
-                                                                    <div class="avatar-title bg-danger-subtle text-danger rounded">
-                                                                        <i class="ri-netflix-fill"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">E-commerce Solutions</h6>
-                                                                    <small class="text-muted">Build secure, user-friendly online stores with full shopping features.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0 avatar-xs">
-                                                                    <div class="avatar-title bg-danger-subtle text-danger rounded">
-                                                                        <i class="ri-netflix-fill"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">Landing Pages & UI/UX Design</h6>
-                                                                    <small class="text-muted">Conversion-focused pages that reflect your brand identity.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0 avatar-xs">
-                                                                    <div class="avatar-title bg-success-subtle text-success rounded">
-                                                                        <i class="ri-spotify-fill"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">Technical SEO Audit</h6>
-                                                                    <small class="text-muted">Identify and fix issues affecting performance, indexing, and speed.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0">
-                                                                    <img src="@assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded">
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">On-Page SEO</h6>
-                                                                    <small class="text-muted">Optimize meta tags, headings, content, and internal links for better visibility.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0 avatar-xs">
-                                                                    <div
-                                                                        class="avatar-title bg-secondary-subtle text-secondary rounded">
-                                                                        <i class="ri-paypal-fill"></i>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">Off-Page SEO</h6>
-                                                                    <small class="text-muted">Analyze backlinks and boost domain authority with ethical link-building.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                                <BListGroupItem tag="li">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1">
-                                                            <div class="d-flex">
-                                                                <div class="flex-shrink-0">
-                                                                    <img src="@assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded">
-                                                                </div>
-                                                                <div class="flex-shrink-0 ms-2">
-                                                                    <h6 class="fs-md mb-0">Performance & Core Web Vitals</h6>
-                                                                    <small class="text-muted">Improve page load time, interactivity, and user experience.</small>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </BListGroupItem>
-                                            </BListGroup>
-                                        </div>
-                                        <b-button variant="secondary" @click="resetSelection">Back</b-button>
-                                    </div>
-                                </b-card>
-                                <b-card v-if="selectedPlan.id=='digital'" class="text-bg-white">
-                                    <div class="right-content-section-column">
-                                        <h4 class="mb-3">{{ selectedPlan.title }}</h4>
-                                        <p>Analyze and optimize your website for better search engine rankings. We offer comprehensive digital marketing services to grow your brand online and drive targeted traffic.</p>
-                                        <div class="service-item">
-                                            <BListGroup tag="ul" class="mb-1">
-                                                <div v-for="(service, index) in digital_marketing_services" :key="index" class="border-b pb-2">
+                                                <div v-for="(service, index) in webSeoServices" :key="index" class="border-b pb-2">
                                                     <BListGroupItem tag="li">
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-grow-1">
@@ -490,14 +359,18 @@ const resolveIcon = (path: string) => {
                                         <b-button variant="secondary" @click="resetSelection">Back</b-button>
                                     </div>
                                 </b-card>
-                                <b-card v-if="selectedPlan.id=='financial'" class="text-bg-light">
+                                <b-card v-if="selectedPlan.id=='digital'" class="text-bg-white">
                                     <div class="right-content-section-column">
                                         <h4 class="mb-3">{{ selectedPlan.title }}</h4>
-                                        <p>We provide end-to-end financial and taxation services designed to support individuals and businesses in maintaining compliance and simplifying financial operations.</p>
+                                        <p>Analyze and optimize your website for better search engine rankings. We offer comprehensive digital marketing services to grow your brand online and drive targeted traffic.</p>
                                         <div class="service-item">
                                             <BListGroup tag="ul" class="mb-1">
-                                                <div v-for="(service, index) in finance_services" :key="index" class="border-b pb-2">
+                                                <div v-for="(service, index) in digitalMarketingServices" :key="index" class="border-b pb-2">
                                                     <BListGroupItem tag="li">
+                                                      <router-link
+                                                        :to="service.link"
+                                                        class="d-flex align-items-center text-reset text-decoration-none px-3 py-2"
+                                                      >
                                                         <div class="d-flex align-items-center">
                                                             <div class="flex-grow-1">
                                                                 <div class="d-flex">
@@ -509,6 +382,35 @@ const resolveIcon = (path: string) => {
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                      </router-link>
+                                                    </BListGroupItem>
+                                                </div>
+                                            </BListGroup>
+                                        </div>
+                                        <b-button variant="secondary" @click="resetSelection">Back</b-button>
+                                    </div>
+                                </b-card>
+                                <b-card v-if="selectedPlan.id=='financial'" class="text-bg-white">
+                                    <div class="right-content-section-column">
+                                        <h4 class="mb-3">{{ selectedPlan.title }}</h4>
+                                        <p>We provide end-to-end financial and taxation services designed to support individuals and businesses in maintaining compliance and simplifying financial operations.</p>
+                                        <div class="service-item">
+                                            <BListGroup tag="ul" class="mb-1">
+                                                <div v-for="(service, index) in financeServices" :key="index" class="border-b pb-2">
+                                                    <BListGroupItem tag="li" class="listcard">
+                                                      <a :href="service.link" target="_blank" rel="noopener">
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="flex-grow-1">
+                                                                <div class="d-flex">
+                                                                    <i class="mdi mdi-check-bold align-middle lh-1 me-2"></i>
+                                                                    <div class="flex-shrink-0 ms-2">
+                                                                        <h6 class="fs-md mb-0">{{ service.title }}</h6>
+                                                                        <small class="text-muted">{{ service.description }}</small>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                      </a>
                                                     </BListGroupItem>
                                                 </div>
                                             </BListGroup>
@@ -2673,149 +2575,7 @@ const resolveIcon = (path: string) => {
       </BContainer>
     </section>
 
-    <footer class="custom-footer bg-dark py-5 position-relative">
-      <BContainer>
-        <BRow>
-          <BCol lg="4" class="mt-4">
-            <div>
-              <div>
-                <img
-                  src="@assets/images/logo-light.png"
-                  alt="logo light"
-                  height="50"
-                />
-              </div>
-              <div class="mt-4 fs-13">
-                <p>Varnarc | SEO, Digital Marketing and Financial Services</p>
-                <p class="ff-secondary">
-                  At Varnarc, we provide custom tools for SEO audits, digital
-                  marketing, and website optimization to help businesses grow
-                  and enhance their digital presence
-                </p>
-              </div>
-            </div>
-          </BCol>
-
-          <BCol lg="7" class="ms-lg-auto">
-            <BRow>
-              <BCol sm="4" class="mt-4">
-                <h5 class="text-white mb-0">Company</h5>
-                <div class="text-muted mt-3">
-                  <ul class="list-unstyled ff-secondary footer-list">
-                    <li>
-                      <Link href="/pages/profile">About US</Link>
-                    </li>
-                    <li>
-                      <BLink href="#">Gallery</BLink>
-                    </li>
-                    <li>
-                      <Link href="/apps/projects-list">Projects</Link>
-                    </li>
-                    <li>
-                      <Link href="/pages/timeline">Timeline</Link>
-                    </li>
-                  </ul>
-                </div>
-              </BCol>
-              <BCol sm="4" class="mt-4">
-                <h5 class="text-white mb-0">Apps Pages</h5>
-                <div class="text-muted mt-3">
-                  <ul class="list-unstyled ff-secondary footer-list">
-                    <li>
-                      <Link href="/calendar">Calendar</Link>
-                    </li>
-                    <li>
-                      <Link href="/mailbox">Mailbox</Link>
-                    </li>
-                    <li>
-                      <Link href="/chat">Chat</Link>
-                    </li>
-                    <li>
-                      <Link href="/apps/crm-deals">Deals</Link>
-                    </li>
-                    <li>
-                      <Link href="/apps/tasks-kanban">kanban board</Link>
-                    </li>
-                  </ul>
-                </div>
-              </BCol>
-              <BCol sm="4" class="mt-4">
-                <h5 class="text-white mb-0">Support</h5>
-                <div class="text-muted mt-3">
-                  <ul class="list-unstyled ff-secondary footer-list">
-                    <li>
-                      <Link href="/pages/faqs">FAQ's</Link>
-                    </li>
-                    <li>
-                      <Link href="/pages/faqs">Contacts</Link>
-                    </li>
-                  </ul>
-                </div>
-              </BCol>
-            </BRow>
-          </BCol>
-        </BRow>
-
-        <BRow class="text-center text-sm-start align-items-center mt-5">
-          <BCol sm="6">
-            <div>
-              <p class="copy-rights mb-0 currentyear">
-                {{ new Date().getFullYear() }} © Velzon - Themesbrand
-              </p>
-            </div>
-          </BCol>
-          <BCol sm="6">
-            <div class="text-sm-end mt-3 mt-sm-0">
-              <ul class="list-inline mb-0 footer-social-link">
-                <li class="list-inline-item">
-                  <BLink href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-facebook-fill"></i>
-                    </div>
-                  </BLink>
-                </li>
-                <li class="list-inline-item">
-                  <BLink href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-github-fill"></i>
-                    </div>
-                  </BLink>
-                </li>
-                <li class="list-inline-item">
-                  <BLink href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-linkedin-fill"></i>
-                    </div>
-                  </BLink>
-                </li>
-                <li class="list-inline-item">
-                  <BLink href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-google-fill"></i>
-                    </div>
-                  </BLink>
-                </li>
-                <li class="list-inline-item">
-                  <BLink href="javascript: void(0);" class="avatar-xs d-block">
-                    <div class="avatar-title rounded-circle">
-                      <i class="ri-dribbble-line"></i>
-                    </div>
-                  </BLink>
-                </li>
-              </ul>
-            </div>
-          </BCol>
-        </BRow>
-      </BContainer>
-    </footer>
-    <BButton
-      variant="danger"
-      @click="topFunction"
-      class="btn-icon"
-      id="back-to-top"
-    >
-      <i class="ri-arrow-up-line"></i>
-    </BButton>
+    <LandingFooter />
   </div>
 </template>
 
