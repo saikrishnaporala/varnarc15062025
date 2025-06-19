@@ -4,7 +4,13 @@ import vue from '@vitejs/plugin-vue';
 
 export default defineConfig({
     build: {
+        outDir: 'public/build',
+        manifest: true,
+        emptyOutDir: true,
         chunkSizeWarningLimit: 4000,
+        rollupOptions: {
+            input: 'resources/js/app.js',
+        },
     },
     plugins: [
         laravel({
