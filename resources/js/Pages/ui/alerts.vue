@@ -493,7 +493,7 @@ export default {
                   </BAlert>
 
                   <h6>Dark Alert</h6>
-                  <BAlert :model-value="true" variant="dark" class="mb-0 material-shadow" show class="material-shadow">
+                  <BAlert :model-value="true" variant="dark" class="mb-0 material-shadow" show>
                     A simple Dark alert with
                     <BLink href="#" class="alert-link"> an example link </BLink>. Give
                     it a click if you like.
