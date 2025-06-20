@@ -7,10 +7,7 @@ export default defineConfig({
         outDir: 'public/build',
         manifest: true,
         emptyOutDir: true,
-        chunkSizeWarningLimit: 4000,
-        rollupOptions: {
-            input: 'resources/js/app.js',
-        },
+        chunkSizeWarningLimit: 4000
     },
     plugins: [
         laravel({
