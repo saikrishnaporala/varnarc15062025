@@ -1,9 +1,7 @@
-name: Node.js CI
+name: Build and Commit Vite Assets
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -11,9 +9,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true  # needed for push
 
-      - name: Use Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20.x
@@ -22,12 +23,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build Vite assets (Laravel production build)
+      - name: Create .env file (if not committed)
         run: |
-          NODE_ENV=production npm run build
-          echo "✅ Build completed, contents of /public/build:"
-          ls -la public/build
+          echo "APP_ENV=production" > .env
+          echo "APP_KEY=base64:dummykeyhere123456=" >> .env
+          echo "APP_URL=https://app.example.com" >> .env
 
-      # Optional: Deploy or upload build folder here
-      # - name: Deploy to server
-      #   run: rsync -avz public/build/ user@server:/path/to/public/build/
+      - name: Build Vite assets
+        run: NODE_ENV=production npm run build
+
+      - name: Commit and push public/build to main branch
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add public/build
+          git commit -m "CI: Add public/build assets [skip ci]" || echo "No changes to commit"
+          git push origin main
