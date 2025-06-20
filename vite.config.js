@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 export default defineConfig({
     build: {
         outDir: 'public/build',
-        manifest: true,
+        manifest: 'public/build/manifest.json',
         emptyOutDir: true,
         chunkSizeWarningLimit: 4000
     },
