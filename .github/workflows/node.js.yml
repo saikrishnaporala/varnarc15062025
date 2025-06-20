@@ -39,6 +39,7 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
+          git pull --rebase origin main
           git add public/build
           git commit -m "CI: Add public/build assets [skip ci]" || echo "No changes"
           git push origin main
