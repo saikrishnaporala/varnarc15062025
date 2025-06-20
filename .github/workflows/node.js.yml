@@ -39,7 +39,13 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git pull --rebase origin main
+
+          # Commit first to avoid rebase conflict
           git add public/build
           git commit -m "CI: Add public/build assets [skip ci]" || echo "No changes"
-          git push origin main
+
+          # Now rebase safely
+          git pull --rebase origin main || echo "Rebase failed or unnecessary"
+
+          # Final push
+          git push origin main || echo "Nothing to push"
